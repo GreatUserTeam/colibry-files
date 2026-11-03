@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Files
+Name[ru]=Файлы
+Name[uk]=Файли
+Comment=Browse and manage files and folders
+Comment[ru]=Просмотр и управление файлами и папками
+Exec=colibry-files %U
+Icon=colibry-files
+Terminal=false
+Categories=System;FileManager;Utility;
+MimeType=inode/directory;
+Keywords=files;folders;manager;explorer;
+StartupNotify=true
