@@ -1,0 +1,41 @@
+<Window Title="Files - Colibry OS" Width="920" Height="580" MinWidth="640" MinHeight="400">
+    <Shortcut Keys="Alt+Left" Action="files.back"/>
+    <Shortcut Keys="Alt+Right" Action="files.forward"/>
+    <Shortcut Keys="Alt+Up" Action="files.up"/>
+    <Shortcut Keys="F5" Action="files.refresh"/>
+    <Shortcut Keys="Ctrl+C" Action="files.copy"/>
+    <Shortcut Keys="Ctrl+X" Action="files.cut"/>
+    <Shortcut Keys="Ctrl+V" Action="files.paste"/>
+    <Shortcut Keys="Ctrl+A" Action="files.selectall"/>
+    <VBox Spacing="10" Slot.Padding="16">
+        <HBox Spacing="6">
+            <Button Text="Back" OnClicked="files.back"/>
+            <Button Text="Forward" OnClicked="files.forward"/>
+            <Button Text="Up" OnClicked="files.up"/>
+            <TextInput Name="path" Placeholder="Folder" Slot.Fill="1" OnCommitted="files.go"/>
+            <Button Text="Hidden" OnClicked="files.hidden"/>
+        </HBox>
+        <HBox Spacing="6">
+            <Button Text="New folder" OnClicked="files.newfolder"/>
+            <Button Text="Copy" OnClicked="files.copy"/>
+            <Button Text="Cut" OnClicked="files.cut"/>
+            <Button Text="Paste" OnClicked="files.paste"/>
+            <Button Text="Delete" OnClicked="files.delete"/>
+            <Button Text="Archive" OnClicked="files.archive"/>
+            <Button Text="Extract" OnClicked="files.extract"/>
+            <Button Text="Properties" OnClicked="files.props"/>
+        </HBox>
+        <HBox Spacing="6">
+            <TextInput Name="pattern" Placeholder="Select by pattern: *.png" Slot.Fill="1" OnCommitted="files.glob"/>
+            <Button Text="Select all" OnClicked="files.selectall"/>
+            <Button Text="Invert" OnClicked="files.invert"/>
+            <TextInput Name="target" Placeholder="Convert to: png" Width="140" OnCommitted="files.convert"/>
+            <Button Text="Convert" OnClicked="files.convert"/>
+        </HBox>
+        <HBox Spacing="12" Slot.Fill="1">
+            <ListView Name="list" Slot.Fill="1"/>
+            <Label Name="props" Width="260" TextSize="13" Wrap="true"/>
+        </HBox>
+        <Label Name="status" TextSize="12"/>
+    </VBox>
+</Window>
